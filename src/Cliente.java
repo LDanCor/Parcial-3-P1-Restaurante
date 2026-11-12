@@ -1,9 +1,15 @@
+import java.util.List;
+
 public class Cliente {
     private String documento;
     private String nombreCompleto;
     private String telefono;
     private String correo;
     private String direccion;
+    /**
+     * Relaciones de la clase Cliente
+     */
+    private List<Pedido> listClientePedido;
 
     /**
      * Metodo constructor para la clase Cliente
@@ -13,12 +19,13 @@ public class Cliente {
      * @param direccion
      * @param correo
      */
-    public Cliente(String documento, String nombreCompleto, String telefono, String direccion, String correo) {
+    public Cliente(String documento, String nombreCompleto, String telefono, String direccion, String correo, List<Pedido>listClientePedido) {
         this.documento = documento;
         this.nombreCompleto = nombreCompleto;
         this.telefono = telefono;
         this.direccion = direccion;
         this.correo = correo;
+        this.listClientePedido=listClientePedido;
     }
 
     public String getDocumento() {
@@ -59,5 +66,13 @@ public class Cliente {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public List<Pedido> getListClientePedido() {
+        return listClientePedido;
+    }
+
+    public void setListClientePedido(List<Pedido> listClientePedido) {
+        this.listClientePedido = listClientePedido;
     }
 }

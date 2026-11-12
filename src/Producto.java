@@ -29,6 +29,7 @@ public abstract  class Producto {
     public abstract double calcularPrecioVenta();
     public abstract boolean cumplirCondicionesCalidad();
 
+
     public String getCodigo() {
         return codigo;
     }
