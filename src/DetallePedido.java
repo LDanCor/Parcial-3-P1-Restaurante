@@ -17,7 +17,7 @@ public class DetallePedido {
      * @return
      */
     public double calcularSubtotal() {
-        // Multiplica el precio de venta unitario del producto por la cantidad solicitada
+
         return theProducto.calcularPrecioVenta() * cantidad;
     }
 

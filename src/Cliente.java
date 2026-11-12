@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
@@ -25,8 +26,17 @@ public class Cliente {
         this.telefono = telefono;
         this.direccion = direccion;
         this.correo = correo;
-        this.listClientePedido=listClientePedido;
+        this.listClientePedido=new ArrayList<>();
     }
+
+    /**
+     * Metodo para agregar un pedido a la lista del cliente
+     * @param pedido
+     */
+    public void agregarPedido(Pedido pedido) {
+        listClientePedido.add(pedido);
+    }
+
 
     public String getDocumento() {
         return documento;
