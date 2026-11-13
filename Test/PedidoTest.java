@@ -37,7 +37,7 @@ public class PedidoTest {
 
         Cliente cliente = new Cliente("456", "Carlos", "5555678", "carlos@mail.com", "Av Principal");
 
-        Pedido pedido = new Pedido("PED02", LocalDate.now(), ModalidadEntrega.DOMICILIO, EstadoEntrega.PENDIENTE, 4.0, cliente, d);
+        Pedido pedido = new Pedido("PED02", LocalDate.now(), ModalidadEntrega.DOMICILIO, EstadoEntrega.PENDIENTE, 4.0, cliente,new RapidoExpress(),detalles );
 
         // Asignar RapidoExpress: Base 5000 + (1500 * 4 km) = 11000 de envío
         pedido.setEmpresaTransporte(new RapidoExpress());
@@ -51,7 +51,7 @@ public class PedidoTest {
         List<DetallePedido> detalles = new ArrayList<>();
         Cliente cliente = new Cliente("789", "Lucía", "5559999", "lucia@mail.com", "Calle 3");
 
-        Pedido pedido = new Pedido("PED03", LocalDate.now(), ModalidadEntrega.RESTAURANTE, EstadoEntrega.PENDIENTE, 0.0, cliente, detalles);
+        Pedido pedido = new Pedido("PED03", LocalDate.now(), ModalidadEntrega.RESTAURANTE, EstadoEntrega.PENDIENTE, 0.0, cliente, new RapidoExpress(),detalles);
 
         assertEquals(0.0, pedido.calcularValorTotal(), 0.001);
     }
@@ -59,7 +59,9 @@ public class PedidoTest {
     @Test
     public void testAsignacionCorrectaDeCliente() {
         Cliente cliente = new Cliente("111", "Pedro", "5550000", "pedro@mail.com", "Carrera 5");
-        Pedido pedido = new Pedido("PED04", LocalDate.now(), ModalidadEntrega.RESTAURANTE, EstadoEntrega.PENDIENTE, 0.0, cliente, new ArrayList<>());
+        List<DetallePedido> detalles = new ArrayList<>();
+        Pedido pedido = new Pedido("PED04", LocalDate.now(), ModalidadEntrega.RESTAURANTE,
+                EstadoEntrega.PENDIENTE, 0.0, cliente, new RapidoExpress(),detalles );
 
         assertEquals("Pedro", pedido.getCliente().getNombreCompleto());
         assertEquals("111", pedido.getCliente().getDocumento());
@@ -67,7 +69,8 @@ public class PedidoTest {
 
     @Test
     public void testCambioEstadoPedido() {
-        Pedido pedido = new Pedido("PED05", LocalDate.now(), ModalidadEntrega.RESTAURANTE, EstadoEntrega.PENDIENTE, 0.0, null, new ArrayList<>());
+        List<DetallePedido> detalles = new ArrayList<>();
+        Pedido pedido = new Pedido("PED05", LocalDate.now(), ModalidadEntrega.RESTAURANTE, EstadoEntrega.PENDIENTE, 0.0, null, new RapidoExpress(),detalles);
 
         assertEquals(EstadoEntrega.PENDIENTE, pedido.getEstado());
 
