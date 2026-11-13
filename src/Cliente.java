@@ -20,7 +20,7 @@ public class Cliente {
      * @param direccion
      * @param correo
      */
-    public Cliente(String documento, String nombreCompleto, String telefono, String direccion, String correo, List<Pedido>listClientePedido) {
+    public Cliente(String documento, String nombreCompleto, String telefono, String direccion, String correo) {
         this.documento = documento;
         this.nombreCompleto = nombreCompleto;
         this.telefono = telefono;
@@ -34,6 +34,7 @@ public class Cliente {
      * @param pedido
      */
     public void agregarPedido(Pedido pedido) {
+
         listClientePedido.add(pedido);
     }
 
