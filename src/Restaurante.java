@@ -28,7 +28,7 @@ import java.util.List;
         }
 
         /**
-         * Metodo para agregar un producto verificando duplicados
+         * Metodo para registrar un producto verificando duplicados
          * @param producto
          * @return
          */
@@ -272,7 +272,7 @@ import java.util.List;
                 }
             }
 
-            System.out.println("\n--- Ingresos por Categoría ---");
+            System.out.println("\n   Ingresos por Categoría");
             System.out.println("Platos Fuertes: $" + ingresosPlatos);
             System.out.println("Bebidas: $" + ingresosBebidas);
             System.out.println("Postres: $" + ingresosPostres);
@@ -290,7 +290,7 @@ import java.util.List;
                 mayorCategoria = "Postres";
             }
 
-            System.out.println("🏆 La categoría que genera mayores ingresos es: " + mayorCategoria + " con $" + maxIngresos);
+            System.out.println(" La categoría que genera mayores ingresos es: " + mayorCategoria + " con $" + maxIngresos);
         }
 
         public String getNombre() {
